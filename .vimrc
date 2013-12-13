@@ -53,14 +53,15 @@ Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'tpope/vim-pathogen.git'
 Bundle 'tpope/vim-surround.git'
-"Bundle 'vim-scripts/comments.vim'
+Bundle 'vim-scripts/comments.vim'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
+Bundle 'digitaltoad/vim-jade.git'
 
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
-Bundle 'comments'
+"Bundle 'comments'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
