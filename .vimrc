@@ -14,6 +14,11 @@ set hlsearch
 set cc=80
 hi ColorColumn ctermbg=lightblue guibg=lightblue
 
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* so ~/Documents/header.txt
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* exe "1," . 7 . "g/filename :.*/s//filename\t" .expand("%")
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* exe "1," . 7 . "g/course :.*/s//course\t\t" .strpart(escape(getcwd(), '/'),56)
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* exe "1," . 7 . "g/date :.*/s//date\t\t" .strftime("%Y-%m-%d")
+
 "colorscheme darkblue "Changes the color scheme
 "setlocal spell "Enables spell checking
 "set spellfile=~/.vimwords.add "The location of the spellcheck dictionary
@@ -37,45 +42,46 @@ endif
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim', {'name':'vundle'}
 
 " My Bundles here:
 "
 
 " original repos on github
 "
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'tpope/vim-pathogen.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'vim-scripts/comments.vim'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-fugitive'
-Bundle 'digitaltoad/vim-jade.git'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-pathogen.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-fugitive'
+Plugin 'digitaltoad/vim-jade.git'
 
 " vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-"Bundle 'comments'
+Plugin 'comments.vim'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+"Plugin 'comments'
 
 " non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
 
 " git repos on your local machine (ie. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
-
+"Plugin 'file:///Users/gmarik/path/to/plugin'
+call vundle#end()
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
