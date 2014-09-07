@@ -12,12 +12,18 @@ set shiftwidth=4 "Assists code formatting
 set expandtab
 set hlsearch
 set cc=80
+set textwidth=80
 hi ColorColumn ctermbg=lightblue guibg=lightblue
 
-autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* so ~/Documents/header.txt
-autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* exe "1," . 7 . "g/filename :.*/s//filename\t" .expand("%")
-autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* exe "1," . 7 . "g/course :.*/s//course\t\t" .strpart(escape(getcwd(), '/'),56)
-autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.* exe "1," . 7 . "g/date :.*/s//date\t\t" .strftime("%Y-%m-%d")
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.txt so ~/Documents/header.txt
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.txt exe "1," . 7 . "g/file :.*/s//file\t\t" .expand("%")
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.txt exe "1," . 7 . "g/course :.*/s//course\t\t" .strpart(escape(getcwd(), '/'),56)
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.txt exe "1," . 7 . "g/date :.*/s//date\t\t" .strftime("%Y-%m-%d")
+
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.py so ~/Documents/python-header.txt
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.py exe "1," . 9 . "g/file:.*/s//file     " .expand("%")
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.py exe "1," . 9 . "g/course:.*/s//course   " .strpart(escape(getcwd(), '/'),56)
+autocmd bufnewfile /windows/Users/tushart91/Downloads/Dropbox/Study/*.py exe "1," . 9 . "g/date:.*/s//date     " .strftime("%Y-%m-%d")
 
 "colorscheme darkblue "Changes the color scheme
 "setlocal spell "Enables spell checking
